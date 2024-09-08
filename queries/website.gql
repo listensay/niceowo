@@ -1,0 +1,7 @@
+query Website {
+  generalSettings {
+    title
+    description
+    url
+  }
+}
