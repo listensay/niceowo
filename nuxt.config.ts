@@ -7,5 +7,8 @@ export default defineNuxtConfig({
     public: {
       GQL_HOST: 'http://admin.200205.net/graphql' // overwritten by process.env.GQL_HOST
     }
-  }
+  },
+  css: [
+    '@/assets/style.css',
+  ]
 })

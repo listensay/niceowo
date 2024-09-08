@@ -1,0 +1,9 @@
+/* tailwindcss */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #acce82;
+  height: 100%;
+}
