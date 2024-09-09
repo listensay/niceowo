@@ -1,5 +1,5 @@
-const useFetchWebsite = async () => {
-  return await GqlWebsite()
+const useFetchWebsite =  () => {
+  return useRequestGet('/api/website')
 }
 
 export default useFetchWebsite

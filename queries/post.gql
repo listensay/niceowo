@@ -1,0 +1,17 @@
+query PostQuery($uri: String!) {
+  nodeByUri(uri: $uri) {
+    id
+    ... on Post {
+      id
+      content
+      date
+      title
+    }
+    ... on Page {
+      id
+      content
+      date
+      title
+    }
+  }
+}
