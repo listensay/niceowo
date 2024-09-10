@@ -15,3 +15,26 @@ query PostQuery($uri: String!) {
     }
   }
 }
+
+query GetPosts ($first: Int, $after: String) {
+  posts(first: $first, after: $after) {
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+    list: edges {
+      article: node {
+        id
+        title
+        uri
+        excerpt
+        featuredImage {
+          node {
+            sourceUrl
+            altText
+          }
+        }
+      }
+    }
+  }
+}
