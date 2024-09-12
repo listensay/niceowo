@@ -1,17 +1,90 @@
 query PostQuery($uri: String!) {
-  nodeByUri(uri: $uri) {
+  data: nodeByUri(uri: $uri) {
     id
     ... on Post {
       id
       content
       date
       title
+      author {
+        node {
+          name
+          avatar {
+            url
+          }
+          uri
+        }
+      }
+      categories {
+        nodes {
+          id
+          name
+          uri
+        }
+      }
+      comments {
+        nodes {
+          link
+          uri
+          date
+          id
+          content
+          author {
+            node {
+              name
+              url
+              avatar {
+                url
+              }
+            }
+          }
+        }
+      }
+      featuredImage {
+        node {
+          title
+          sourceUrl
+        }
+      }
     }
     ... on Page {
       id
       content
       date
       title
+      author {
+        node {
+          name
+          avatar {
+            url
+          }
+          uri
+        }
+      }
+      comments {
+        nodes {
+          link
+          uri
+          date
+          id
+          content
+          author {
+            node {
+              name
+              url
+              avatar {
+                url
+              }
+            }
+          }
+        }
+      }
+      featuredImage {
+        node {
+          title
+          sourceUrl
+        }
+      }
     }
   }
 }

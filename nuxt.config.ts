@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  modules: ['nuxt-graphql-client', '@nuxtjs/tailwindcss'],
+  modules: ['nuxt-graphql-client', '@nuxtjs/tailwindcss', 'dayjs-nuxt'],
   runtimeConfig: {
     public: {
       GQL_HOST: 'http://admin.200205.net/graphql'
