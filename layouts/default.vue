@@ -13,7 +13,7 @@ if(menus.value.length !== 0) {
 </script>
 
 <template>
-  <div class="layout h-[100vh] p-8">
+  <div class="layout h-[100vh] px-8">
     <div class="text-[#01001e] h-full flex">
       <div class="w-64 bg-white border-r border-zinc-200">
         <AppMenuMain :menus="PC.menuItems.nodes" />
