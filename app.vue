@@ -3,12 +3,12 @@ const website = await useFetchWebsite()
 
 useHead({
   titleTemplate: (titleChunk) => {
-    return titleChunk ? `${titleChunk} - ${website.generalSettings?.title}` : `${website.generalSettings?.title} - ${website.generalSettings?.description}`;
+    return titleChunk ? `${titleChunk} - ${website.seo?.title}` : `${website.seo?.title} - ${website.seo?.description}`;
   },
   meta: [
     {
       name: 'description',
-      content: website.generalSettings?.description
+      content: website.base?.description
     }
   ]
 })

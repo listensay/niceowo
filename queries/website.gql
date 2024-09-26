@@ -1,7 +1,23 @@
 query Website {
-  generalSettings {
+  seo: generalSettings {
     title
     description
     url
+  }
+  base: website {
+    description
+    logo
+    slogan
+    about
+    avatar
+    email
+    nickname
+    social_links {
+      icon
+      name
+      url
+    }
+    build_date
+    copyright
   }
 }
