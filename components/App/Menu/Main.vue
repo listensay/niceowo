@@ -8,7 +8,10 @@ const props = defineProps({
   }
 })
 
-const currentActive = ref(props.menus[0].id)
+const currentActive = ref(null)
+if(props.menus) {
+  currentActive.value = props.menus[0].id
+}
 </script>
 
 <template>

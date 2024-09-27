@@ -2,13 +2,16 @@
 const result = await useFetchMenus()
 const menus = ref([])
 menus.value = result.menus.nodes
-
 const PC = ref([])
 const TOP = ref([])
 
 if(menus.value.length !== 0) {
-  PC.value = menus.value.filter(item => item.locations[0] === 'MAIN')[0]
-  TOP.value = menus.value.filter(item => item.locations[0] === 'TOP')[0]
+  if(menus.value.filter(item => item.locations[0] === 'MAIN')[0]) {
+    PC.value = menus.value.filter(item => item.locations[0] === 'MAIN')[0].menuItems.nodes
+  }
+  if(menus.value.filter(item => item.locations[0] === 'TOP')[0]) {
+    TOP.value = menus.value.filter(item => item.locations[0] === 'TOP')[0].menuItems.nodes
+  }
 }
 </script>
 
@@ -16,10 +19,20 @@ if(menus.value.length !== 0) {
   <div class="layout h-[100vh] px-8">
     <div class="text-[#01001e] h-full flex">
       <div class="w-64 bg-white border-r border-zinc-200">
-        <AppMenuMain :menus="PC.menuItems.nodes" />
+          <template v-if="PC.length > 0">
+            <AppMenuMain :menus="PC" />
+          </template>
+          <template v-else>
+            <div>未设置左侧菜单</div>
+          </template>
       </div>
       <div class="flex-1 overflow-auto bg-white">
-        <AppMenuTop :menus="TOP.menuItems.nodes" />
+        <template v-if="TOP.length > 0">
+          <AppMenuTop :menus="TOP" />
+        </template>
+        <template v-else>
+          <div>未设置顶部菜单</div>
+        </template>
         <slot />
       </div>
       <div class="w-60 bg-white">

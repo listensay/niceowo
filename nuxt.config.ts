@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   modules: ['nuxt-graphql-client', '@nuxtjs/tailwindcss', 'dayjs-nuxt'],
   runtimeConfig: {
     public: {
-      GQL_HOST: 'http://admin.200205.net/graphql'
+      GQL_HOST: 'http://127.0.0.1:1234/graphql'
     }
   },
   css: [
