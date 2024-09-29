@@ -3,7 +3,11 @@ const website = await useFetchWebsite()
 
 useHead({
   titleTemplate: (titleChunk) => {
-    return titleChunk ? `${titleChunk} - ${website.seo?.title}` : `${website.seo?.title} - ${website.seo?.description}`;
+    if(website?.seo?.description) {
+      return titleChunk ? `${titleChunk} - ${website.seo?.title}` : `${website.seo?.title} - ${website.seo?.description}`;
+    } else {
+      return titleChunk ? `${titleChunk} - ${website.seo?.title}` : `${website.seo?.title}`;
+    }
   },
   meta: [
     {
