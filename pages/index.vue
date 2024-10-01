@@ -16,19 +16,34 @@ const getPosts = async (first, after = null) => {
 }
 
 await getPosts(10, after.value)
+
+const wsinfo = useWsinfo().value
+console.log(wsinfo)
 </script>
 
 <template>
   <div class="home">
-    <div class="panel h-64 bg-[#423DAF] p-8">
-      <div class="text-5xl text-white mb-4">
-        Welcome to
-      </div>
-      <div class="text-5xl text-white">
-        My homepage
+    <div class="relative pb-4 mb-6">
+      <div class="h-64 bg-[#423DAF]"></div>
+      <div class="mx-8">
+        <div class="avatar -mt-16 flex justify-between">
+          <img class="w-32 h-32 border border-zinc-100" :src="wsinfo.avatar" :alt="wsinfo.nickname">
+          <div class="flex items-center">
+            <button class="block bg-red-500 p-2">Like: 16</button>
+          </div>
+        </div>
+        <div class="text-lg mt-4 mb-2">{{ wsinfo.nickname }}</div>
+        <div class="text-sm mb-4 text-zinc-700">{{ wsinfo.about }}</div>
+        <div class="flex">
+          <div v-for="item in wsinfo.social_links" :key="item.name">
+            <a :href="item.url" target="_blank" class="mr-2 block">
+              <img :src="item.icon" :alt="item.name" class="h-8">
+            </a>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="p-4">
+    <div class="p-8">
       <div class="text-2xl mb-4">最新文章</div>
       <div class="grid grid-cols-5 gap-4">
         <div v-for="item in list" class="mb-4">

@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 const website = await useFetchWebsite()
+useWsinfo().value = website.base
 
 useHead({
   titleTemplate: (titleChunk) => {

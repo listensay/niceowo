@@ -1,0 +1,1 @@
+export const useWsinfo = () => useState('wsinfo', () => {})

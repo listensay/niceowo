@@ -10,7 +10,6 @@ try {
 
 const article = ref(null)
 article.value = result.data
-console.log(article.value)
 
 useSeoMeta({
   title: article.value.title,

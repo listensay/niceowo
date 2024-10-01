@@ -1,0 +1,41 @@
+# 获取分类文章
+query CategoryPost ($first: Int, $after: String) {
+  category(id: "uncategorized", idType: SLUG) {
+    id
+    name
+    count
+    description
+      posts(first: $first, after: $after) {
+        pageInfo {
+          endCursor
+          hasNextPage
+        }
+        list: edges {
+          article: node {
+            id
+            title
+            uri
+            excerpt
+            featuredImage {
+              node {
+                sourceUrl
+                altText
+              }
+            }
+          }
+        }
+    }
+  }
+}
+
+# 获取分类列表
+query Categorys {
+  categories {
+    list: edges {
+      item: node {
+        name
+        uri
+      }
+    }
+  }
+}

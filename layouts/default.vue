@@ -27,12 +27,12 @@ if(menus.value.length !== 0) {
           </template>
       </div>
       <div class="flex-1 overflow-auto bg-white">
-        <template v-if="TOP.length > 0">
+        <!-- <template v-if="TOP.length > 0">
           <AppMenuTop :menus="TOP" />
         </template>
         <template v-else>
           <div>未设置顶部菜单</div>
-        </template>
+        </template> -->
         <slot />
       </div>
       <div class="w-60 bg-white">
