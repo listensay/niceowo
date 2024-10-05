@@ -19,5 +19,10 @@ query Website {
     }
     build_date
     copyright
+    profile {
+      key
+      value
+      color
+    }
   }
 }

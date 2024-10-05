@@ -71,23 +71,6 @@ useSeoMeta({
         </div>
       </template>
     <article class="prose max-w-full mb-4" v-html="article.content"></article>
-    <!-- <div class="shadow-md my-8 rounded-md">
-      <div class="p-4">Comments </div>
-      <div class="p-4">
-        <div v-for="item in article.comments.nodes">
-          <div class="flex mb-4">
-            <img :src="item.author.node.avatar.url" :alt="item.author.node.name" class=" rounded-full w-10 h-10 mr-2" />
-            <div class="text-sm">
-              <NuxtLink>
-                {{ item.author.node.name }}
-              </NuxtLink>
-              <div class="my-2 text-zinc-700" v-html="item.content"></div>  
-              <time class="text-zinc-500" :datetime="$dayjs(item.date).format('YYYY/MM/DD').toString()">{{ $dayjs(item.date).format('YYYY-MM-DD').toString() }} </time>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
   </div>
 </template>
 

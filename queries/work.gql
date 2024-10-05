@@ -1,0 +1,45 @@
+query Works ($first: Int, $after: String) {
+  works(first: $first, after: $after) {
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+    list: nodes {
+      id
+      title
+      content
+      uri
+      excerpt
+      featuredImage {
+        node {
+          sourceUrl
+          title
+        }
+      }
+    }
+  }
+}
+
+query GetWork($uri: String) {
+  data: workBy(uri: $uri) {
+    date
+    content
+    id
+    title
+    excerpt
+    featuredImage {
+      node {
+        title
+        sourceUrl
+        author {
+          node {
+            name
+            avatar {
+              url
+            }
+          }
+        }
+      }
+    }
+  }
+}
