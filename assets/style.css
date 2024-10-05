@@ -4,6 +4,6 @@
 @tailwind utilities;
 
 body {
-  background-color: #acce82;
+  background-color: rgb(191 219 254/1);
   height: 100%;
 }
