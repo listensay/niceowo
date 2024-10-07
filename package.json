@@ -19,6 +19,7 @@
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.12.1",
     "@tailwindcss/typography": "^0.5.15",
-    "dayjs-nuxt": "^2.1.11"
+    "dayjs-nuxt": "^2.1.11",
+    "nitro-port-module": "^0.2.1"
   }
 }
