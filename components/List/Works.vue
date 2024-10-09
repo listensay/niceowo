@@ -23,15 +23,15 @@ await getWorks(10, after.value)
     <div class="mb-6">
       <div class="text-lg">我的作品</div>
     </div>
-    <div class="border border-zinc-100 py-4 rounded-md overflow-hidden">
-      <div class="flex pb-4 mb-4 border-b border-zinc-100 text-sm">
+    <div class="py-4 rounded-md overflow-hidden">
+      <div class="flex pb-4 mb-2 border-b border-zinc-100 text-sm">
         <div class="w-[10%] text-center">#</div>
         <div class="w-[62%]">作品</div>
         <div class="w-[10%] text-center">时间</div>
         <div class="w-[18%] text-center">作者</div>
       </div>
       <div class="flex">
-        <div v-for="(item, index) in list" class="overflow-hidden w-full">
+        <div v-for="(item, index) in list" class="overflow-hidden w-full py-2">
           <NuxtLink :to="item.uri" class="block w-full">
             <div class="w-full">
               <div class="flex items-center w-full">
@@ -39,7 +39,7 @@ await getWorks(10, after.value)
                 <div class="flex w-[62%] items-center">
                   <div>
                     <template v-if="item.featuredImage">
-                      <img :src="item.featuredImage.node.sourceUrl" class="w-16 h-16 object-cover" :alt="item.title">
+                      <img :src="item.featuredImage.node.sourceUrl" class="w-14 h-14 object-cover" :alt="item.title">
                     </template>
                     <template v-else>
                       <img src="./defult" class="h-full object-cover" :alt="item.title">              
