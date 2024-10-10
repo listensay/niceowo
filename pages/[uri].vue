@@ -1,3 +1,10 @@
+/**
+ * TODO:
+ * 1. 评论功能
+ * 2. 评论列表
+ * 3. 面包导航
+ */
+
 <script setup>
 const route = useRoute()
 const uri = route.params.uri
