@@ -42,7 +42,12 @@ const wsinfo = useWsinfo().value
       </div>
     </div>
     <div class="p-8 pt-4">
+      <MoreNav title="作品集" link="/works" />
       <ListWorks />
+      <div class="mt-6">
+        <MoreNav title="文章" link="/articles" />
+        <ListArticles />
+      </div>
     </div>
   </div>
 </template>
