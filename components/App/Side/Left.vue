@@ -2,10 +2,21 @@
 const result = await useFetchMenus()
 const menus = ref([])
 menus.value = result.menus.nodes
-const PC = ref([])
+
+const PC = ref([
+  {
+    label: 'Home',
+    uri: '/'
+  },
+  {
+    label: 'Articles',
+    uri: '/articles'
+  }
+])
+
 if(menus.value.length !== 0) {
   if(menus.value.filter(item => item.locations[0] === 'MAIN')[0]) {
-    PC.value = menus.value.filter(item => item.locations[0] === 'MAIN')[0].menuItems.nodes
+    PC.value.push(...menus.value.filter(item => item.locations[0] === 'MAIN')[0].menuItems.nodes)
   }
 }
 </script>

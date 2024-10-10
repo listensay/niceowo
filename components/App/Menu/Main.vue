@@ -8,10 +8,13 @@ const props = defineProps({
   }
 })
 
-const currentActive = ref(null)
-if(props.menus) {
-  currentActive.value = props.menus[0].id
-}
+// route
+const route = useRoute()
+watch(() => route.fullPath, () => {
+  currentActive.value = route.fullPath
+})
+
+const currentActive = ref(route.fullPath)
 
 const logo = useWsinfo().value.logo
 const description = useWsinfo().value.description
@@ -25,7 +28,7 @@ const description = useWsinfo().value.description
           <img :src="logo" width="100" :alt="description">
         </NuxtLink>
       </div>
-      <div v-for="item in menus" :key="item.id" class="mb-6" :class="{ 'text-blue-500': currentActive === item.id }" @click="currentActive = item.id">
+      <div v-for="item in menus" :key="item.id" class="mb-6" :class="{ 'text-blue-500': currentActive === item.uri }" @click="currentActive = item.uri">
         <NuxtLink :to="item.uri === '' ? '/' : item.uri">{{ item.label }}</NuxtLink>
       </div>
     </div>
